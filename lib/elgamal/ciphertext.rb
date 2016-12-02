@@ -7,8 +7,10 @@ module ElGamal
 			@ciphertext = ciphertext
 		end
 
+		attr_accessor :ciphertext
+
 		def to_s
-			"#{@ciphertext}"
+			@ciphertext.to_s
 		end
 
 		def [](pos)

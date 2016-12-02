@@ -12,8 +12,8 @@ module ElGamal
 			@public_h = public_h
 		end
 
-		def encrypt(message)
-			rand_k = rand(@public_p - 1) + 1
+		def encrypt(message, rand_k: nil)
+			rand_k ||= rand(@public_p - 1) + 1
 			element_a = @public_g.to_bn.mod_exp(rand_k, @public_p).to_i
 			element_b = message * @public_h.to_bn.mod_exp(rand_k, @public_p).to_i % @public_p
 			return ElGamal::Ciphertext.new([element_a, element_b])
