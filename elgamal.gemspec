@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'elgamal'
-  s.version     = '0.0.3'
+  s.version     = '0.0.4'
   s.date        = '2016-12-01'
   s.summary     = "Basic ruby ElGamal implementation."
   s.description = "Basic ruby ElGamal implementation. Used to do basic encryption and decryption."
