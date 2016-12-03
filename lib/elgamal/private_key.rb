@@ -11,7 +11,7 @@ module ElGamal
 
 		def decrypt(ciphertext)
 			raise ArgumentError unless ciphertext.instance_of? Ciphertext
-			ciphertext[1] * (ciphertext[0] ** @private_a).to_bn.mod_inverse(@public_p) % @public_p 
+			ciphertext[1] * (ciphertext[0].to_bn.mod_exp(@private_a, @public_p)).mod_inverse(@public_p) % @public_p 
 		end
 
 	end
